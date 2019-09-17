@@ -14,7 +14,7 @@
 <script>
 // https://medium.com/letsboot/basics-using-ajax-with-fetch-api-b2218b0b9691
 
-// example 1 - XMLHttpRequest
+// XMLHttpRequest (old School, ok... ancient)
 // https://json.org/example.html
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -22,7 +22,8 @@
       document.getElementById("demo").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "data/simple.json", true);
+  // xhttp.open("GET", "data/simple.json", true);
+  xhttp.open("GET", "data/simpleMenu.json", true);
   xhttp.send();
 
 </script>

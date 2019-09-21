@@ -5,26 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Read via XMLHttpRequest</title>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <p>DATA:</p>
-  <span id="demo" style="width: 300; padding: 20px; background: red"></span>
+  <h1>Read via XMLHttpRequest:</h1>
+  <pre class="codeFormatting">
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("output").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "data/simpleMenu.json", true);
+      xhttp.send();
+  </pre>
+
+  <div id="output" style="background: lightgreen"></div>
+
+  <script>
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("output").innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("GET", "data/simpleMenu.json", true);
+    xhttp.send();
+  </script>
+
 </body>
-
-<script>
-// https://medium.com/letsboot/basics-using-ajax-with-fetch-api-b2218b0b9691
-
-// XMLHttpRequest (old School, ok... ancient)
-// https://json.org/example.html
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML = this.responseText;
-    }
-  };
-  // xhttp.open("GET", "data/simple.json", true);
-  xhttp.open("GET", "data/simpleMenu.json", true);
-  xhttp.send();
-
-</script>
 </html>

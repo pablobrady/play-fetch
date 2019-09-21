@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Read via jQuery AJAX (object style)</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+  <h1>Read via JQuery AJAX (object style):</h1>
+  <pre class="codeFormatting">
+      $.ajax({
+        type: 'GET',
+        url: 'data/simpleMenu.json',
+        dataType: 'JSON',
+        success: function(data) {
+          document.getElementById("demo").innerHTML = data;
+        },
+        fail: function(error) {
+          document.getElementById("demo").innerHTML = error;
+        }
+      })
+  </pre>
+
+  <span id="output" style="background: lightblue"></span>
+
+  <script>
+  // jQuery AJAX (object style)
+  $.ajax({
+    type: 'GET',
+    url: 'data/simpleMenu.json',
+    dataType: 'JSON',
+    success: function(data) {
+      document.getElementById("demo").innerHTML = data;
+    },
+    fail: function(error) {
+      document.getElementById("demo").innerHTML = error;
+    }
+  })
+  </script>
+
+</body>
+</html>

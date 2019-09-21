@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Read via Fetch (ES6 Dot syntax)</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <h1>Read via Fetch (ES6 Dot syntax):</h1>
+  <pre class="codeFormatting">
+      fetch('data/simpleMenu.json')
+      .then(data => console.log(data))
+      .catch(error => console.log('Error:', error));
+  </pre>
+
+  <span id="output" style="background: steelblue; color: white;"></span>
+
+  <script>
+    // Fetch (ES6 Dot syntax)
+    fetch('data/simpleMenu.json')
+      .then(data => console.log(data))
+      .catch(error => console.log('Error:', error));
+  </script>
+
+</body>
+</html>

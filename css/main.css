@@ -1,0 +1,49 @@
+BODY {
+  background: url('/images/TernaryGradient.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family:  "-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+}
+
+H1 {
+  font-family:  "system-ui";
+  font-size: 40px;
+  margin: 30px 40px 40px 40px;
+}
+
+A,
+SECTION {
+  font-size: 30px;
+  color: #333333;
+  text-decoration: none;
+}
+UL OL {
+  padding-bottom: 20px;
+}
+
+A:hover {
+  color: pink;
+}
+
+.codeFormatting {
+  font-family: "Courier";
+  font-size: 16px;
+  color: black; 
+  background-color: #f1f1f1;
+  border: 1px solid #999999;
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+.dataFormatting {
+  background-color: #eeeeee;
+  border: 1px solid blue;
+}
+
+#output {
+  width: 100%;
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+}

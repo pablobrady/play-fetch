@@ -8,23 +8,11 @@
   <title>AJAX / FETCH 1</title>
 </head>
 <body>
-  DATA:  <span id="demo" style="width: 300; padding: 20px; background: red"></span>
+  <h1>Read JSON Playground</h1>
+  <ul>
+    <li><a href="https://pablobrady.github.io/play-fetch/read1.html">Read via XMLHttpRequest</a></li>
+    <li><a href="https://pablobrady.github.io/play-fetch/read2.html">Read via AJAX</a></li>
+    <li><a href="https://pablobrady.github.io/play-fetch/read3.html">Read via Fetch</a></li>
+  </ul>
 </body>
-
-<script>
-// https://medium.com/letsboot/basics-using-ajax-with-fetch-api-b2218b0b9691
-
-// XMLHttpRequest (old School, ok... ancient)
-// https://json.org/example.html
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML = this.responseText;
-    }
-  };
-  // xhttp.open("GET", "data/simple.json", true);
-  xhttp.open("GET", "data/simpleMenu.json", true);
-  xhttp.send();
-
-</script>
 </html>

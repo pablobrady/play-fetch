@@ -41,7 +41,7 @@
     console.log(data.menu)
     document.getElementById("output").innerHTML = JSON.stringify( data );
   }).fail(function(data) {
-    console.log('Error: ' + data);
+    console.error('Error: ' + data);
     document.getElementById("output").innerHTML = 'Error: ' + data;
   });
   </script>

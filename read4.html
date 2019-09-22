@@ -24,7 +24,7 @@
       fetch('data/simpleMenu.json')
       .then(res => res.json())
       .then(posts => console.log(posts))
-      .catch(error => console.log('Error:', error));
+      .catch(error => console.error('Error:', error));
   </pre>
 
   <div id="output" style="background: purple; color: white;"></div>

@@ -8,28 +8,36 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <h1>Read via Fetch (ES6 Dot syntax):</h1>
-  <ul class="nav">
-    <li><a href="read1.html">1</a></li>
-    <li><a href="read2.html">2</a></li>
-    <li><a href="read3.html">3</a></li>
-    <li><a href="read4.html">4</a></li>
-    <li><a href="read5.html">5</a></li>
-  </ul>
+  <header>
+    <h1>Reading Website Data with <b>Fetch dot syntax (ES6)</b></h1>
+    <ul class="nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="read1.html">1</a></li>
+      <li><a href="read2.html">2</a></li>
+      <li><a href="read3.html">3</a></li>
+      <li><a href="read4.html">4</a></li>
+      <li><a href="read5.html">5</a></li>
+    </ul>
+  </header>
 
   <pre class="codeFormatting">
       fetch('data/simpleMenu.json')
-      .then(data => console.log(data))
+      .then(res => res.json())
+      .then(posts => console.log(posts))
       .catch(error => console.log('Error:', error));
   </pre>
 
-  <span id="output" style="background: steelblue; color: white;"></span>
+  <div id="output" style="background: purple; color: white;"></div>
 
   <script>
     // Fetch (ES6 Dot syntax)
     fetch('data/simpleMenu.json')
-      .then(data => console.log(data))
-      .catch(error => console.log('Error:', error));
+    .then(res => res.json())
+    .then(posts => {
+      console.log(posts)
+      document.getElementById("output").innerHTML = JSON.stringify( posts );
+    })
+    .catch(error => console.log('Error:', error));
   </script>
 
 </body>

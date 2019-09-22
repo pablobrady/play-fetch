@@ -12,33 +12,37 @@
     crossorigin="anonymous"></script>
 </head>
 <body>
-  <h1>Read via JQuery AJAX ('get' style):</h1>
-  <ul class="nav">
-    <li><a href="read1.html">1</a></li>
-    <li><a href="read2.html">2</a></li>
-    <li><a href="read3.html">3</a></li>
-    <li><a href="read4.html">4</a></li>
-    <li><a href="read5.html">5</a></li>
-  </ul>
+  <header>
+    <h1>Reading Website Data with <b>JQuery AJAX .get</b></h1>
+    <ul class="nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="read1.html">1</a></li>
+      <li><a href="read2.html">2</a></li>
+      <li><a href="read3.html">3</a></li>
+      <li><a href="read4.html">4</a></li>
+      <li><a href="read5.html">5</a></li>
+    </ul>
+  </header>
   
   <pre class="codeFormatting">
       $.get('data/simpleMenu.json').done(function(data) {
-        document.getElementById("demo").innerHTML = data;
+        document.getElementById("output").innerHTML = JSON.stringify( data );
       }).fail(function(data) {
         console.log('Error: ' + data);
-        document.getElementById("demo").innerHTML = 'Error: ' + data;
+        document.getElementById("output").innerHTML = 'Error: ' + data;
       });
   </pre>
 
-  <span id="output" style="background: steelblue; color: white;"></span>
+  <div id="output" style="background: steelblue; color: white;"></div>
 
   <script>
   // jQuery AJAX ('get' style)
   $.get('data/simpleMenu.json').done(function(data) {
-    document.getElementById("demo").innerHTML = data;
+    console.log(data.menu)
+    document.getElementById("output").innerHTML = JSON.stringify( data );
   }).fail(function(data) {
     console.log('Error: ' + data);
-    document.getElementById("demo").innerHTML = 'Error: ' + data;
+    document.getElementById("output").innerHTML = 'Error: ' + data;
   });
   </script>
 

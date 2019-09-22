@@ -11,14 +11,17 @@
     crossorigin="anonymous"></script>
 </head>
 <body>
-  <h1>Read via JQuery AJAX (object style):</h1>
-  <ul class="nav">
-    <li><a href="read1.html">1</a></li>
-    <li><a href="read2.html">2</a></li>
-    <li><a href="read3.html">3</a></li>
-    <li><a href="read4.html">4</a></li>
-    <li><a href="read5.html">5</a></li>
-  </ul>
+  <header>
+    <h1>Reading Website Data with a <b>JQuery AJAX Object</b></h1>
+    <ul class="nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="read1.html">1</a></li>
+      <li><a href="read2.html">2</a></li>
+      <li><a href="read3.html">3</a></li>
+      <li><a href="read4.html">4</a></li>
+      <li><a href="read5.html">5</a></li>
+    </ul>
+  </header>
   
   <pre class="codeFormatting">
       $.ajax({
@@ -26,15 +29,15 @@
         url: 'data/simpleMenu.json',
         dataType: 'JSON',
         success: function(data) {
-          document.getElementById("demo").innerHTML = data;
+          document.getElementById("output").innerHTML = data.menu;
         },
         fail: function(error) {
-          document.getElementById("demo").innerHTML = error;
+          document.getElementById("output").innerHTML = error;
         }
       })
   </pre>
 
-  <span id="output" style="background: lightblue"></span>
+  <div id="output" style="background: lightblue"></div>
 
   <script>
   // jQuery AJAX (object style)
@@ -43,10 +46,11 @@
     url: 'data/simpleMenu.json',
     dataType: 'JSON',
     success: function(data) {
-      document.getElementById("demo").innerHTML = data;
+      console.log("", data);
+      document.getElementById("output").innerHTML = JSON.stringify( data );
     },
     fail: function(error) {
-      document.getElementById("demo").innerHTML = error;
+      document.getElementById("output").innerHTML = JSON.stringify( error );
     }
   })
   </script>

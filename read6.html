@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Read via Fetch (eES7 Async/Await)</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+    <h1>6. Reading Website Data with <b>Fetch Async/Await w AbortController</b></h1>
+    <ul class="nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="read1.html">1</a></li>
+      <li><a href="read2.html">2</a></li>
+      <li><a href="read3.html">3</a></li>
+      <li><a href="read4.html">4</a></li>
+      <li><a href="read5.html">5</a></li>
+      <li><a href="read5.html">6*</a></li>
+    </ul>
+  </header>
+  
+  <pre class="codeFormatting">
+    var controller = new AbortController();
+    var signal = controller.signal;
+
+    var downloadBtn = document.querySelector('.download');
+    var abortBtn = document.querySelector('.abort');
+
+    downloadBtn.addEventListener('click', fetchVideo);
+
+    abortBtn.addEventListener('click', function() {
+      controller.abort();
+      document.getElementById("output").innerHTML += `Download aborted.<br>`;
+    });
+
+    function fetchVideo() {
+      
+      fetch(url, {signal}).then(function(response) {
+        
+      }).catch(function(e) {
+        document.getElementById("output").innerHTML += `Download error: ${e.message}. <br>`;
+      })
+    }
+  </pre>
+
+  <button class="download">START DOWNLOAD</button> 
+  <button class="abort">ABORT</button>
+  <div id="output" style="background: steelblue; color: white;">Click START to load data.</div>
+
+
+  <script>
+    // Fetch Async/Await w About Controller (no IE support)
+    // https://dmitripavlutin.com/timeout-fetch-request/
+    // Just a stub in Chrome/Safari
+    // FF:  https://developer.mozilla.org/en-US/docs/Web/API/AbortController
+
+    var controller = new AbortController();
+    var signal = controller.signal;
+
+    var downloadBtn = document.querySelector('.download');
+    var abortBtn = document.querySelector('.abort');
+
+    downloadBtn.addEventListener('click', fetchVideo);
+
+    abortBtn.addEventListener('click', function() {
+      controller.abort();
+      document.getElementById("output").innerHTML += `Download aborted.<br>`;
+    });
+
+    function fetchVideo() {
+      document.getElementById("output").innerHTML += `FetchVideo()...<br>`;
+      fetch(url, {signal}).then(function(response) {
+        document.getElementById("output").innerHTML += `Download complete!<br>`;
+      }).catch(function(e) {
+        document.getElementById("output").innerHTML += `Download error: ${e.message}. <br>`;
+      })
+    }
+
+  </script>
+
+</body>
+</html>

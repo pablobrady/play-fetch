@@ -21,16 +21,16 @@
   </header>
   
   <pre class="codeFormatting">
-      async function doAjax() {
+      async function doFetch() {
         try {
             const res = await fetch('data/simpleMenu.json');
             const data = await res.text();
-            document.getElementById("demo").innerHTML = data;
+            document.getElementById("output").innerHTML = data;
         } catch (error) {
-          document.getElementById("demo").innerHTML = 'Error: ' + data;
+          document.getElementById("output").innerHTML = 'Error: ' + data;
         }
       }
-      doAjax();
+      doFetch();
   </pre>
 
   <div id="output" style="background: steelblue; color: white;"></div>
@@ -38,7 +38,7 @@
 
   <script>
     // Fetch (ES7 Async/Await):
-    async function doAjax() {
+    async function doFetch() {
       try {
           const res = await fetch('data/simpleMenu.json');
           const data = await res.text();
@@ -47,7 +47,7 @@
         document.getElementById("output").innerHTML = 'Error: ' + JSON.stringify( data );
       }
     }
-    doAjax();
+    doFetch();
   </script>
 
 </body>
